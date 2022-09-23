@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
+import { inject, onMounted } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
-
-onMounted(() => {
-  console.log(import.meta.env.VITE_BASE_URL);
+const axios = inject("axios");
+onMounted(async () => {
+  const response = await axios.get("/workers/get-all");
 });
 </script>
 
