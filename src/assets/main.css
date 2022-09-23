@@ -1,7 +1,13 @@
-@import "./base.css";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+ @import "./base.css";
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
+
+ #app {
+   max-width: 100%;
+ }
+
+ /*
 #app {
   max-width: 1280px;
   margin: 0 auto;
@@ -34,4 +40,4 @@ a,
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
   }
-}
+} */
