@@ -38,7 +38,7 @@ const getImage = computed(() => {
     </div>
     <div class="tw-flex tw-justify-center">
       <a
-        href="/detail"
+        href="/InfoUserView"
         class="tw-rounded-t-lg tw-py-1 tw-px-3 tw-text-sm tw-font-bold tw-text-white tw-cursor-pointer tw-tracking-wider"
         style="background-color: #f6b21b"
         >Ver detalle</a
