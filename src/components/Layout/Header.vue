@@ -4,8 +4,8 @@
       <div class="tw-max-w-full tw-mx-auto">
         <div class="tw-flex tw-justify-between tw-items-center">
           <div class="tw-flex tw-space-x-4">
-            <a href="#" class="tw-flex tw-py-5 tw-px-2">
-              <img class="tw-w-" src="logo.svg" alt="" />
+            <a href="#" class="tw-flex tw-py-5 tw-px-2 lg:tw-pl-6">
+              <img class="" src="logo.svg" alt="" />
             </a>
           </div>
           <div class="tw-xs:hidden tw-flex tw-items-center tw-justify-between">
@@ -22,8 +22,8 @@
                             </div>
                         </div> -->
             <div>
-              <RouterLink to="/">Home</RouterLink>
-              <RouterLink to="/about">About</RouterLink>
+              <!-- <RouterLink to="/">Home</RouterLink>
+              <RouterLink to="/about">About</RouterLink> -->
             </div>
             <div class="tw-md:hidden tw-flex tw-items-center tw-mr-5">
               <button
