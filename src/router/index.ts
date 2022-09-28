@@ -4,6 +4,7 @@ import InfoUserView from '../views/InfoUserView.vue'
 import DetailUser from '../views/DetailUser.vue'
 import PersonalInformation from '../views/PersonalInformation.vue'
 import UserInformation from '../views/UserInformation.vue'
+import ModalDetailUser from '../components/users/ModalDetailUser.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +33,11 @@ const router = createRouter({
       path: '/UserInformation',
       name: 'UserInformation',
       component: UserInformation
+    },
+    {
+      path: '/ModalDetailUser',
+      name: 'ModalDetailUser',
+      component: ModalDetailUser
     },
   ]
 })
