@@ -24,80 +24,71 @@ function getDefaultImg(event) {
 </script>
 <template>
   <div
-    class="tw-bg-white tw-rounded-md tw-overflow-hidden tw-shadow-md tw-border tw-border-[#D9D9D9]"
-  >
-    <img
-      :src="getImage"
-      @error="getDefaultImg"
-      alt=""
-      class="tw-w-full tw-h-32 sm:tw-h-48 md:tw-h-36 lg:tw-h-48 tw-object-fill"
-    />
-    <div class="tw-grid tw-grid-cols-2 tw-space-y-1 tw-px-2 tw-items-center">
-      <div>
-        <p
-          class="tw-text-gray-500 tw-text-[10px] sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium"
-        >
-          Calificacion
-        </p>
+    class=" tw-flex tw-flex-col tw-items-stretch tw-justify-between tw-bg-white tw-rounded-md tw-overflow-hidden tw-shadow-md tw-border tw-border-[#D9D9D9]">
+    <div>
+      <div class="tw-h-48  sm:tw-h-56  ">
+        <img :src="getImage" @error="getDefaultImg" alt="" class="tw-h-48 sm:tw-h-56 tw-object-cover  tw-w-full" />
       </div>
-      <div>
-        <p
-          class="tw-text-gray-500 tw-text-[10px] sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium"
-        >
-          3 <img src="start.svg" alt="" class="tw-inline tw-mb-1" />
-        </p>
-      </div>
-      <div>
-        <p
-          class="tw-text-gray-500 tw-text-[10px] sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium"
-        >
-          Estado:
-        </p>
-      </div>
-      <div>
-        <p
-          class="tw-text-green-400 tw-text-[10px] sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium"
-        >
-          Disponible
-        </p>
-      </div>
-      <div>
-        <p
-          class="tw-text-gray-500 tw-text-[10px] sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium"
-        >
-          Categoría:
-        </p>
-      </div>
-      <div>
-        <p
-          class="tw-text-gray-500 tw-text-[10px] sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-leading-3"
-        >
-          {{ getCategory }}
-        </p>
-      </div>
-      <div>
-        <p
-          class="tw-text-gray-500 tw-text-[10px] sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium"
-        >
-          Nombre:
-        </p>
-      </div>
-      <div>
-        <p
-          class="tw-text-gray-500 tw-text-[10px] sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-capitalize tw-leading-3"
-        >
-          {{ getFullName }}
-        </p>
+
+      <div class="tw-grid tw-grid-cols-2 tw-space-y-1 tw-px-2 tw-items-center">
+        <div>
+          <p
+            class="tw-text-gray-500 tw-text-[12px]  xl:tw-text-base   sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium">
+            Calificacion
+          </p>
+        </div>
+        <div>
+          <p
+            class="tw-text-gray-500 tw-text-[12px] xl:tw-text-base  sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium">
+            3 <img src="start.svg" alt="" class="tw-inline tw-mb-1" />
+          </p>
+        </div>
+        <div>
+          <p
+            class="tw-text-gray-500 tw-text-[12px] xl:tw-text-base  sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium">
+            Estado:
+          </p>
+        </div>
+        <div>
+          <p
+            class="tw-text-green-400 tw-text-[12px] xl:tw-text-base  sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium">
+            Disponible
+          </p>
+        </div>
+        <div>
+          <p
+            class="tw-text-gray-500 tw-text-[12px] xl:tw-text-base sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium">
+            Categoría:
+          </p>
+        </div>
+        <div>
+          <p
+            class="tw-text-gray-500 tw-text-[12px] xl:tw-text-base  sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-leading-3">
+            {{ getCategory }}
+          </p>
+        </div>
+        <div>
+          <p
+            class="tw-text-gray-500 tw-text-[12px] xl:tw-text-base  sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium">
+            Nombre:
+          </p>
+        </div>
+        <div>
+          <p
+            class="tw-text-gray-500 tw-text-[12px] xl:tw-text-base  sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-capitalize tw-leading-3">
+            {{ getFullName }}
+          </p>
+        </div>
       </div>
     </div>
+
     <div class="tw-flex tw-justify-center tw-mt-3 tw-items-end">
-      <a
-        href="/InfoUserView"
-        class="tw-rounded-t-lg tw-py-1 tw-px-4 tw-text-[13px] tw-font-medium tw-text-white tw-cursor-pointer tw-tracking-wider"
-        style="background-color: #f6b21b"
-        >Ver detalle</a
-      >
+      <a href="/InfoUserView"
+        class="tw-rounded-t-lg tw-py-1 tw-px-4 tw-text-[13px] sm:tw-text-[15px]  tw-font-medium tw-text-white tw-cursor-pointer tw-tracking-wider"
+        style="background-color: #f6b21b">Ver detalle</a>
     </div>
   </div>
 </template>
-<style scoped></style>
+<style scoped>
+
+</style>
