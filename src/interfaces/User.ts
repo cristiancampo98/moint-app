@@ -1,8 +1,8 @@
-import type Worker from "@/interfaces/Worker";
+import type Worker from "./Worker";
 export default interface User {
   id: number;
   name: string;
   last_name: string;
   photo: string;
-  data_woker: Worker;
+  data_worker: Worker;
 }
