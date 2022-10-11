@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import User from "@/interfaces/User";
+import type User from "../../interfaces/User";
 import { computed } from "vue";
 const props = defineProps<{
   user: User;
@@ -17,7 +17,7 @@ const getCategory = computed(() => {
   return props.user.data_worker.category.name;
 });
 
-function getDefaultImg(event) {
+function getDefaultImg(event: any) {
   return (event.target.src =
     "https://cdn.nerdschalk.com/wp-content/uploads/2021/01/instagram-user-blocked.png?width=800");
 }
@@ -53,7 +53,7 @@ function getDefaultImg(event) {
           <p
             class="tw-text-gray-500 tw-text-[12px] xl:tw-text-base sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium"
           >
-            3 <img src="start.svg" alt="" class="tw-inline tw-mb-1" />
+            3 <img src="/start.svg" alt="" class="tw-inline tw-mb-1" />
           </p>
         </div>
         <div>
