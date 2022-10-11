@@ -1,5 +1,5 @@
 export default interface DataWorker {
-  category: {};
+  category: { name: string };
   experience: {};
   speciality: {};
 }
