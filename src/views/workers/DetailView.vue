@@ -31,7 +31,7 @@ onMounted(() => {
     </div>
     <div class="tw-flex tw-justify-start">
       <img
-        :src="`https://mointt.com/${worker.foto}`"
+        :src="`https://mointt.com${worker.foto}`"
         alt=""
         class="tw-w-[212px] tw-h-[166px] tw-object-fill tw-rounded-lg"
       />
