@@ -89,7 +89,7 @@ onMounted(() => {
     >
       <CardProfile v-for="(user, key) in users" :key="key" :user="user" />
     </div>
-    <div v-else>
+    <div v-if="route.hash === '#employers'">
       {{ employers }}
     </div>
   </div>

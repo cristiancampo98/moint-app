@@ -120,20 +120,15 @@ async function getWorkerById(id: Number) {
     </div>
 
     <div class="tw-flex md:tw-hidden tw-justify-center tw-mt-3 tw-items-end">
-      <a
-        href="/InfoUserView"
+      <router-link
+        :to="`/worker-detail/${props.user.id}`"
         class="tw-rounded-t-lg tw-py-1 tw-px-4 tw-text-[13px] sm:tw-text-[15px] tw-font-medium tw-text-white tw-cursor-pointer tw-tracking-wider"
         style="background-color: #f6b21b"
-        >Ver detalle</a
+        >Ver detalle</router-link
       >
     </div>
     <n-modal class="tw-w-[626px] tw-rounded-2xl" v-model:show="showModal">
-      <n-card
-        role="dialog"
-        aria-modal="true"
-        class="tw-w-1/3"
-        footer-style="padding:0;"
-      >
+      <n-card role="dialog" aria-modal="true" footer-style="padding:0;">
         <div
           class="tw-flex tw-justify-between tw-items-center tw-border-b-2 tw-border-[#091E4221] tw-mb-9 tw-pb-3"
         >

@@ -1,16 +1,16 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: ["./src/**/*.{html,js,vue}"],
   theme: {
     screens: {
-      'xs': '475px',
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1536px',
+      xxs: "320px",
+      xs: "475px",
+      xsm: "540px",
+      ...defaultTheme.screens,
     },
     extend: {},
   },
   plugins: [],
-  prefix: 'tw-',
-}
+  prefix: "tw-",
+};
