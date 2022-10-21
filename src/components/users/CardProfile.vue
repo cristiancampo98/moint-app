@@ -148,7 +148,7 @@ async function getWorkerById(id: Number) {
           <div class="tw-py-6 tw-pl-5">
             <img
               class="tw-w-[212px] tw-h-[166px] tw-rounded-xl"
-              :src="`https://mointt.com${worker.foto}`"
+              :src="`https://mointt.com${worker.image}`"
               alt="Imagen"
             />
           </div>
@@ -162,16 +162,20 @@ async function getWorkerById(id: Number) {
                 Nombre
               </h1>
               <p class="tw-text-sm tw-text-[#778CA2]">
-                {{ worker.name }} {{ worker.last_name }}
+                {{ worker.fullname }}
               </p>
               <h1 class="tw-text-sm tw-font-medium tw-text-[#778CA2]">
                 Estado
               </h1>
-              <p class="tw-text-sm tw-text-[#40BA6D] tw-font-medium">-to do-</p>
+              <p class="tw-text-sm tw-text-[#40BA6D] tw-font-medium">
+                {{ worker.dataWorker.status.name }}
+              </p>
               <h1 class="tw-text-sm tw-font-medium tw-text-[#778CA2]">
                 Valor por día
               </h1>
-              <p class="tw-text-sm tw-text-[#778CA2]">-to do-</p>
+              <p class="tw-text-sm tw-text-[#778CA2]">
+                {{ worker.dataWorker.cost_per_our }}
+              </p>
             </div>
           </div>
         </div>
@@ -180,13 +184,19 @@ async function getWorkerById(id: Number) {
             <h1 class="tw-text-sm tw-font-medium tw-text-[#778CA2]">
               Categoría
             </h1>
-            <p class="tw-text-sm tw-text-[#778CA2]">-to do-</p>
+            <p class="tw-text-sm tw-text-[#778CA2]">
+              {{ worker.dataWorker.category.name }}
+            </p>
             <h1 class="tw-text-sm tw-font-medium tw-text-[#778CA2]">Oficio</h1>
-            <p class="tw-text-sm tw-text-[#778CA2]">-to do-</p>
+            <p class="tw-text-sm tw-text-[#778CA2]">
+              {{ worker.dataWorker.specialty.name }}
+            </p>
             <h1 class="tw-text-sm tw-font-medium tw-text-[#778CA2]">
               Experiencia
             </h1>
-            <p class="tw-text-sm tw-text-[#778CA2]">-to do-</p>
+            <p class="tw-text-sm tw-text-[#778CA2]">
+              {{ worker.dataWorker.experience.qty }}
+            </p>
             <h1 class="tw-text-sm tw-font-medium tw-text-[#778CA2]">
               Ubicación
             </h1>
@@ -194,11 +204,17 @@ async function getWorkerById(id: Number) {
           </div>
           <div class="tw-grid tw-grid-cols-2 tw-gap-y-0">
             <h1 class="tw-text-sm tw-font-medium tw-text-[#778CA2]">RH</h1>
-            <p class="tw-text-sm tw-text-[#778CA2]">-to do-</p>
+            <p class="tw-text-sm tw-text-[#778CA2]">
+              {{ worker.dataWorker.rh.name }}
+            </p>
             <h1 class="tw-text-sm tw-font-medium tw-text-[#778CA2]">EPS</h1>
-            <p class="tw-text-sm tw-text-[#778CA2]">-to do-</p>
+            <p class="tw-text-sm tw-text-[#778CA2]">
+              {{ worker.dataWorker.eps.name }}
+            </p>
             <h1 class="tw-text-sm tw-font-medium tw-text-[#778CA2]">ARL</h1>
-            <p class="tw-text-sm tw-text-[#778CA2]">-to do-</p>
+            <p class="tw-text-sm tw-text-[#778CA2]">
+              {{ worker.dataWorker.arl.name }}
+            </p>
           </div>
         </div>
         <template #footer>
