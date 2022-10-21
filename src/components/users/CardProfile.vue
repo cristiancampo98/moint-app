@@ -179,7 +179,7 @@ async function getWorkerById(id: Number) {
             </div>
           </div>
         </div>
-        <div class="tw-grid tw-grid-cols-2 tw-gap-x-20 tw-mt-12 tw-px-14">
+        <div class="tw-grid tw-grid-cols-2 tw-gap-x-20 tw-mt-12 tw-px-10">
           <div class="tw-grid tw-grid-cols-2 tw-gap-y-3">
             <h1 class="tw-text-sm tw-font-medium tw-text-[#778CA2]">
               Categoría

@@ -31,7 +31,7 @@ onMounted(() => {
     </div>
     <div class="tw-flex tw-justify-start">
       <img
-        :src="`https://mointt.com${worker.foto}`"
+        :src="`https://mointt.com${worker.image}`"
         alt=""
         class="tw-w-[212px] tw-h-[166px] tw-object-fill tw-rounded-lg"
       />
@@ -46,19 +46,23 @@ onMounted(() => {
       <div class="tw-py-1">
         <span class="tw-text-gray-500 tw-font-bold tw-text"
           >Nombre:
-          <span class="tw-text-gray-400 tw-font-normal"
-            >{{ worker.name }} {{ worker.last_name }}</span
-          >
+          <span class="tw-text-gray-400 tw-font-normal">{{
+            worker.fullname
+          }}</span>
         </span>
       </div>
       <div class="tw-py-1">
         <span class="tw-text-gray-500 tw-font-bold tw-text">Estado: </span>
-        <span class="tw-text-green-400 tw-font-normal">Disponible</span>
+        <span class="tw-text-green-400 tw-font-normal">{{
+          worker.dataWorker.status.name
+        }}</span>
       </div>
       <div class="tw-py-1">
         <span class="tw-text-gray-500 tw-font-bold tw-text"
           >Valor por día:
-          <span class="tw-text-gray-400 tw-font-normal">42.000 COP</span>
+          <span class="tw-text-gray-400 tw-font-normal">{{
+            worker.dataWorker.cost_per_our
+          }}</span>
         </span>
       </div>
     </div>
@@ -71,43 +75,55 @@ onMounted(() => {
       <div class="tw-py-1">
         <span class="tw-text-gray-500 tw-font-bold tw-text"
           >Categoría:
-          <span class="tw-text-gray-400 tw-font-normal">Albañil</span>
+          <span class="tw-text-gray-400 tw-font-normal"
+            >{{ worker.dataWorker.category.name }}
+          </span>
         </span>
       </div>
       <div class="tw-py-1">
         <span class="tw-text-gray-500 tw-font-bold tw-text"
           >Oficio:
-          <span class="tw-text-gray-400 tw-font-normal">Maestro de obra</span>
+          <span class="tw-text-gray-400 tw-font-normal">{{
+            worker.dataWorker.specialty.name
+          }}</span>
         </span>
       </div>
       <div class="tw-py-1">
         <span class="tw-text-gray-500 tw-font-bold tw-text"
           >Experiencia:
-          <span class="tw-text-gray-400 tw-font-normal">10 años</span>
+          <span class="tw-text-gray-400 tw-font-normal">{{
+            worker.dataWorker.experience.qty
+          }}</span>
         </span>
       </div>
       <div class="tw-py-1">
         <span class="tw-text-gray-500 tw-font-bold tw-text"
           >Ubicación:
-          <span class="tw-text-gray-400 tw-font-normal">K5 - 55</span>
+          <span class="tw-text-gray-400 tw-font-normal">-to do-</span>
         </span>
       </div>
       <div class="tw-py-1">
         <span class="tw-text-gray-500 tw-font-bold tw-text"
           >RH:
-          <span class="tw-text-gray-400 tw-font-normal">O-</span>
+          <span class="tw-text-gray-400 tw-font-normal">{{
+            worker.dataWorker.rh.name
+          }}</span>
         </span>
       </div>
       <div class="tw-py-1">
         <span class="tw-text-gray-500 tw-font-bold tw-text"
           >EPS:
-          <span class="tw-text-gray-400 tw-font-normal">Sanitas</span>
+          <span class="tw-text-gray-400 tw-font-normal">{{
+            worker.dataWorker.eps.name
+          }}</span>
         </span>
       </div>
       <div class="tw-py-1">
         <span class="tw-text-gray-500 tw-font-bold tw-text"
           >ARL:
-          <span class="tw-text-gray-400 tw-font-normal">Sura</span>
+          <span class="tw-text-gray-400 tw-font-normal">{{
+            worker.dataWorker.arl.name
+          }}</span>
         </span>
       </div>
     </div>
