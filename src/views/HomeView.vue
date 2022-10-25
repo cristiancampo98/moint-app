@@ -85,7 +85,7 @@ onMounted(() => {
     </div>
     <div
       v-if="users.length && route.hash !== '#employers'"
-      class="tw-content-center tw-px-5 md:tw-px-20 lg:tw-px-16 xl:tw-px-24 2xl:tw-px-36 tw-py-5 tw-grid tw-grid-cols-2 sm:tw-grid-cols-3 lg:tw-grid-cols-4 tw-gap-5 lg:tw-gap-8 xl:tw-gap-10 2xl:tw-gap-12"
+      class="tw-content-center tw-pl-5 md:tw-px-20 lg:tw-px-16 xl:tw-px-24 2xl:tw-px-36 tw-py-5 tw-grid tw-grid-cols-2 sm:tw-grid-cols-3 lg:tw-grid-cols-4 tw-gap-5 lg:tw-gap-8 xl:tw-gap-10 2xl:tw-gap-12"
     >
       <CardProfile v-for="(user, key) in users" :key="key" :user="user" />
     </div>

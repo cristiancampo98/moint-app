@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
+import { NRate } from "naive-ui";
 import workerService from "../../services/workerService";
 
 const loading = ref(false);
@@ -15,7 +16,16 @@ async function getWorkerById(id: Number) {
     worker.value = result.data.data;
   }
 }
+function getAverageScore(rates: []) {
+  const totalRates = rates.length;
+  if (!totalRates) {
+    return rates;
+  }
+  let sum = 0;
+  rates.map((rate) => (sum += rate.rate));
 
+  return sum / totalRates;
+}
 onMounted(() => {
   const { userId } = route.params;
   getWorkerById(Number(userId));
@@ -40,7 +50,11 @@ onMounted(() => {
       <span class="tw-text-gray-500 tw-font-bold tw-text tw-block tw-my-2"
         >Calificación</span
       >
-      <img src="/grup_start.svg" alt="" class="tw-w-3/6" />
+      <n-rate
+        :value="getAverageScore(worker.rates)"
+        allow-half
+        readonly
+      ></n-rate>
     </div>
     <div class="tw-py-5">
       <div class="tw-py-1">
@@ -99,7 +113,9 @@ onMounted(() => {
       <div class="tw-py-1">
         <span class="tw-text-gray-500 tw-font-bold tw-text"
           >Ubicación:
-          <span class="tw-text-gray-400 tw-font-normal">-to do-</span>
+          <span class="tw-text-gray-400 tw-font-normal"
+            >{{ worker.city }}, {{ worker.department }}</span
+          >
         </span>
       </div>
       <div class="tw-py-1">

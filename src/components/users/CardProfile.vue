@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { NButton, NCard, NModal } from "naive-ui";
+import { NButton, NCard, NModal, NRate } from "naive-ui";
 import type User from "../../interfaces/User";
 import { computed, ref } from "vue";
 import workerService from "../../services/workerService";
@@ -37,6 +37,17 @@ async function getWorkerById(id: Number) {
     showModal.value = true;
   }
 }
+
+function getAverageScore(rates: []) {
+  const totalRates = rates.length;
+  if (!totalRates) {
+    return rates;
+  }
+  let sum = 0;
+  rates.map((rate) => (sum += rate.rate));
+
+  return sum / totalRates;
+}
 </script>
 <template>
   <div
@@ -62,56 +73,59 @@ async function getWorkerById(id: Number) {
       <div class="tw-grid tw-grid-cols-2 tw-space-y-1 tw-px-2 tw-items-center">
         <div>
           <p
-            class="tw-text-gray-500 tw-text-[12px] xl:tw-text-base sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium"
+            class="tw-text-gray-500 tw-text-[11px] xl:tw-text-base sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium"
           >
             Calificacion
           </p>
         </div>
         <div>
           <p
-            class="tw-text-gray-500 tw-text-[12px] xl:tw-text-base sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium"
+            class="tw-text-gray-500 tw-text-[11px] xl:tw-text-base sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium"
           >
-            3 <img src="/start.svg" alt="" class="tw-inline tw-mb-1" />
+            {{
+              props.user.rates ? props.user.rates.toFixed(1) : props.user.rates
+            }}
+            <img src="/start.svg" alt="" class="tw-inline tw-mb-1" />
           </p>
         </div>
         <div>
           <p
-            class="tw-text-gray-500 tw-text-[12px] xl:tw-text-base sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium"
+            class="tw-text-gray-500 tw-text-[11px] xl:tw-text-base sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium"
           >
             Estado:
           </p>
         </div>
         <div>
           <p
-            class="tw-text-green-400 tw-text-[12px] xl:tw-text-base sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium"
+            class="tw-text-green-400 tw-text-[11px] xl:tw-text-base sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium"
           >
-            Disponible
+            {{ props.user.data_worker.status.name }}
           </p>
         </div>
         <div>
           <p
-            class="tw-text-gray-500 tw-text-[12px] xl:tw-text-base sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium"
+            class="tw-text-gray-500 tw-text-[11px] xl:tw-text-base sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium"
           >
             Categoría:
           </p>
         </div>
         <div>
           <p
-            class="tw-text-gray-500 tw-text-[12px] xl:tw-text-base sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-leading-3"
+            class="tw-text-gray-500 tw-text-[11px] xl:tw-text-base sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-leading-3"
           >
             {{ getCategory }}
           </p>
         </div>
         <div>
           <p
-            class="tw-text-gray-500 tw-text-[12px] xl:tw-text-base sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium"
+            class="tw-text-gray-500 tw-text-[11px] xl:tw-text-base sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-font-medium"
           >
             Nombre:
           </p>
         </div>
         <div>
           <p
-            class="tw-text-gray-500 tw-text-[12px] xl:tw-text-base sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-capitalize tw-leading-3"
+            class="tw-text-gray-500 tw-text-[11px] xl:tw-text-base sm:tw-text-sm md:tw-text-base lg:tw-text-[15px] tw-capitalize tw-leading-3"
           >
             {{ getFullName }}
           </p>
@@ -156,7 +170,11 @@ async function getWorkerById(id: Number) {
             <h1 class="tw-text-sm tw-font-medium tw-text-[#778CA2]">
               Calificacion
             </h1>
-            <img src="/grup_start.svg" alt="Rate" />
+            <n-rate
+              :value="getAverageScore(worker.rates)"
+              allow-half
+              readonly
+            ></n-rate>
             <div class="tw-grid tw-grid-cols-2 tw-mt-6 tw-gap-y-3">
               <h1 class="tw-text-sm tw-font-medium tw-text-[#778CA2]">
                 Nombre
@@ -200,7 +218,9 @@ async function getWorkerById(id: Number) {
             <h1 class="tw-text-sm tw-font-medium tw-text-[#778CA2]">
               Ubicación
             </h1>
-            <p class="tw-text-sm tw-text-[#778CA2]">{{ worker.barrio }}</p>
+            <p class="tw-text-sm tw-text-[#778CA2]">
+              {{ worker.city }}, {{ worker.department }}
+            </p>
           </div>
           <div class="tw-grid tw-grid-cols-2 tw-gap-y-0">
             <h1 class="tw-text-sm tw-font-medium tw-text-[#778CA2]">RH</h1>
